@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Cloner News{% endblock %}
 {% block content %}
-    <div>
-        <a>1</a>
-        <h3>first post title</h3>
-        <h4>post summary text</h4>
-        <a>author</a>
-    </div>
+    {% for story in storyArray %}
+        <div>
+            <a>{{loop.index}}</a>
+            <a>{{ storyArray[loop.index0]['title'] }}</a>
+            <a href="{{ storyArray[loop.index0]['url'] }}">({{ urlArray[loop.index0]}})</a>
+            <h4>{{storyArray[loop.index0]['score']}} points by {{storyArray[loop.index0]['by']}} {{ storyArray[loop.index0]['time'] }} hours ago</h4>
+        </div>
+    {% endfor %}
 {% endblock %}
