@@ -1,5 +1,7 @@
+import os
 from flask import Flask
 from flask import make_response
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -12,4 +14,4 @@ def other_page(page_name):
     return response
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)))
