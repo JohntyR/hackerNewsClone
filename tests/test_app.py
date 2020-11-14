@@ -12,7 +12,7 @@ class BasicTestCase(unittest.TestCase):
         pass
 
     def test_front_page(self):
-        response = self.app.get('/', content_type='html/text')
+        response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_other(self):
